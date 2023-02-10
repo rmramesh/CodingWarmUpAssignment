@@ -1,0 +1,18 @@
+strict digraph root {
+    "n0" [ label="n0:root"  ]
+    "n1" [ label="n1:dialogue_root"  ]
+    "n2" [ label="n2:test_drive_state"  ]
+    "n3" [ label="n3:how_to_order_state"  ]
+    "n4" [ label="n4:td_canceled"  ]
+    "n5" [ label="n5:td_confirmation"  ]
+    "n6" [ label="n6:td_confirmed"  ]
+    "n0" -> "n1" [ label="e0" ]
+    "n1" -> "n2" [ label="e1:intent_transition" ]
+    "n1" -> "n3" [ label="e2:intent_transition" ]
+    "n2" -> "n4" [ label="e3:intent_transition" ]
+    "n2" -> "n5" [ label="e4:entity_transition" ]
+    "n2" -> "n2" [ label="e5:intent_transition" ]
+    "n5" -> "n2" [ label="e6:intent_transition" ]
+    "n5" -> "n4" [ label="e7:intent_transition" ]
+    "n5" -> "n6" [ label="e8:intent_transition" ]
+}
